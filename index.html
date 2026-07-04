@@ -37,7 +37,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 1rem;
             transition: all 0.15s ease;
             cursor: pointer;
             position: relative;
@@ -48,7 +48,7 @@
             background-color: #f1f5f9;
             color: #94a3b8;
             font-weight: 800;
-            font-size: 0.65rem;
+            font-size: 0.95rem;
             cursor: default;
         }
 
@@ -87,20 +87,20 @@
         <header class="mb-6 flex justify-between items-start">
             <div>
                 <h1 class="text-2xl font-800 tracking-tight text-slate-900">Planner Urlopowy</h1>
-                <p id="full-date-display" class="text-slate-500 text-sm font-medium"></p>
+                <p id="full-date-display" class="text-slate-500 text-xl font-medium"></p>
             </div>
-            <button onclick="goToToday()" class="text-xs font-bold bg-white border border-slate-200 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
+            <button onclick="goToToday()" class="text-s font-bold bg-white border border-slate-200 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
                 Dzisiaj
             </button>
         </header>
 
         <div class="grid grid-cols-2 gap-4 mb-6">
             <div class="glass-card p-4 text-center">
-                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pula dni</span>
+                <span class="block text-[12px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pula dni</span>
                 <input type="number" id="total-pool" class="text-2xl font-extrabold w-full text-center bg-transparent focus:outline-none" value="26">
             </div>
             <div class="glass-card p-4 text-center border-b-4 border-indigo-500">
-                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pozostało</span>
+                <span class="block text-[12px] font-bold text-slate-400 uppercase tracking-wider mb-1">Pozostało</span>
                 <span id="remaining-days" class="text-2xl font-extrabold text-indigo-600">0</span>
             </div>
         </div>
@@ -118,14 +118,14 @@
 
             <div class="p-3">
                 <div class="calendar-grid mb-1">
-                    <div class="text-[9px] font-black text-slate-300 text-center uppercase">Tyd</div>
-                    <div class="text-[9px] font-bold text-slate-400 text-center">PN</div>
-                    <div class="text-[9px] font-bold text-slate-400 text-center">WT</div>
-                    <div class="text-[9px] font-bold text-slate-400 text-center">ŚR</div>
-                    <div class="text-[9px] font-bold text-slate-400 text-center">CZ</div>
-                    <div class="text-[9px] font-bold text-slate-400 text-center">PT</div>
-                    <div class="text-[9px] font-bold text-rose-400 text-center">SO</div>
-                    <div class="text-[9px] font-bold text-rose-400 text-center">ND</div>
+                    <div class="text-[11px] font-black text-slate-300 text-center uppercase">Tyd</div>
+                    <div class="text-[11px] font-bold text-slate-400 text-center">PN</div>
+                    <div class="text-[11px] font-bold text-slate-400 text-center">WT</div>
+                    <div class="text-[11px] font-bold text-slate-400 text-center">ŚR</div>
+                    <div class="text-[11px] font-bold text-slate-400 text-center">CZ</div>
+                    <div class="text-[11px] font-bold text-slate-400 text-center">PT</div>
+                    <div class="text-[11px] font-bold text-rose-400 text-center">SO</div>
+                    <div class="text-[11px] font-bold text-rose-400 text-center">ND</div>
                 </div>
                 <div id="calendar-content" class="calendar-grid"></div>
             </div>
@@ -133,17 +133,17 @@
 
         <div class="glass-card p-5 mb-6">
             <div class="flex items-center justify-between mb-4">
-                <h3 class="font-bold text-slate-800 text-sm flex items-center">
+                <h3 class="font-bold text-slate-800 text-m flex items-center">
                     <span class="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
                     Dodaj urlop
                 </h3>
-                <span id="selection-info" class="text-[10px] font-bold text-indigo-500 uppercase">Kliknij dni w kalendarzu</span>
+                <span id="selection-info" class="text-[11px] font-bold text-indigo-500 uppercase">Kliknij dni w kalendarzu</span>
             </div>
             <div class="grid grid-cols-2 gap-3 mb-4">
                 <input type="date" id="date-start" class="w-full rounded-xl p-2.5 text-xs font-semibold bg-slate-50 border-slate-200 focus:ring-2 ring-indigo-100 outline-none">
                 <input type="date" id="date-end" class="w-full rounded-xl p-2.5 text-xs font-semibold bg-slate-50 border-slate-200 focus:ring-2 ring-indigo-100 outline-none">
             </div>
-            <button onclick="addNewVacation()" class="btn-primary w-full text-white font-bold py-3 rounded-xl shadow-lg shadow-indigo-100 uppercase tracking-wider text-[11px]">
+            <button onclick="addNewVacation()" class="btn-primary w-full text-white font-bold py-3 rounded-xl shadow-lg shadow-indigo-100 uppercase tracking-wider text-[14px]">
                 Zatwierdź wybrany termin
             </button>
         </div>
@@ -321,14 +321,14 @@
             document.getElementById('remaining-days').innerText = appState.pool - used;
 
             const list = document.getElementById('vacation-list');
-            list.innerHTML = `<h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1 mb-2">Zaplanowane urlopy</h3>`;
+            list.innerHTML = `<h3 class="text-[12px] font-black text-slate-400 uppercase tracking-widest ml-1 mb-2">Zaplanowane urlopy</h3>`;
             
             appState.vacations.sort((a, b) => a.start.localeCompare(b.start)).forEach(v => {
                 list.innerHTML += `
                     <div class="glass-card p-3 flex justify-between items-center bg-white border-l-4 border-indigo-500">
                         <div>
-                            <p class="text-xs font-bold text-slate-800">${v.start.split('-').reverse().join('.')} — ${v.end.split('-').reverse().join('.')}</p>
-                            <p class="text-[10px] font-bold text-slate-400 uppercase">Dni: ${v.count} • Tydzień ${v.week}</p>
+                            <p class="text-s font-bold text-slate-800">${v.start.split('-').reverse().join('.')} — ${v.end.split('-').reverse().join('.')}</p>
+                            <p class="text-[12px] font-bold text-slate-400 uppercase">Dni: ${v.count} • Tydzień ${v.week}</p>
                         </div>
                         <button onclick="deleteVacation(${v.id})" class="text-rose-400 hover:text-rose-600 p-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
